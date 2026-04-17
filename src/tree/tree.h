@@ -1,4 +1,4 @@
-#include "../node/node.cpp"
+#include "../node/node.h"
 template<class T>
 class Tree{
     private:

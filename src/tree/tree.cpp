@@ -18,7 +18,7 @@ Node<T>* Tree<T>::insert(Node<T> * node, T data){
     
     if(node==NULL){
 
-        return new Node<T>(data,NULL,NULL);
+        return new Node<T>(data, NULL, NULL);
 
     }else if(node->getData()>data){
          
@@ -43,14 +43,14 @@ void Tree<T>::insert_no_recursive(T data){
     
     if(root==NULL){
 
-        root=new Node<T>(data,NULL,NULL);
+        root=new Node<T>(data, NULL, NULL);
 
     }
     else{
         Node<T>* actual = root;
         Node<T>* father = NULL;
 
-        while(actual != NULL && data != actual->data){
+        while(actual != NULL && data != actual->getData()){
             father = actual;
             if(actual->getData() > data){
                 actual = actual->getChild(IZQ);
@@ -63,10 +63,10 @@ void Tree<T>::insert_no_recursive(T data){
         if(actual != NULL) return;
         
         if(father->getData()> data){
-            father->setLeft = new Node(data, NULL, NULL);
+            father->setLeft(new Node<T>(data, NULL, NULL));
         }
         else{
-            father->setRight = new Node(data, NULL, NULL);
+            father->setRight(new Node<T>(data, NULL, NULL));
         }
     }
 }
